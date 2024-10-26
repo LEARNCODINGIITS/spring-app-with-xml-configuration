@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!--  Configure the Address Bean class -->
+<bean id="addr" class="com.iits.emsapp.Address">
+	<!--  Setter Injection -->
+	 <property name="street" value="abc"/>
+	 <property name="city" value="hyd"/>
+	 <property name="state" value="ts"/>
+	 	
+</bean>
+
+<!--  Configure the Employee Bean class -->
+<!--  Employee emp=new Employee() -->
+<bean id="emp" class="com.iits.emsapp.Employee">
+		<!--  Setter Injection -->
+		<property name="id" value="1001"/>
+		<!-- emp.setId(1001) -->
+		<property name="name" value="SK"/>
+		<property name="salary" value="30000"/>
+		<property name="mno">
+			<list>
+				<value>9988776655</value>
+				<value>8877665544</value>
+			</list>
+		</property>
+		
+		<property name="address" ref="addr" />
+		
+</bean>
+</beans>
